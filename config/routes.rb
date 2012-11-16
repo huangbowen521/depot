@@ -1,6 +1,7 @@
 Depot::Application.routes.draw do
   get "store/index"
-
+  match 'store/add_to_cart' =>'store#add_to_cart'
+  match 'store/empty_cart' =>'store#empty_cart'
   resources :products
 
   # The priority is based upon order of creation:

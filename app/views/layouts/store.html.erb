@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Depot store</title>
+  <%= stylesheet_link_tag "store", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="store">
+<div id="banner">
+  <%= image_tag('rails.png') %>
+  <%= @page_title || 'Pragmatic Bookshelf' %>
+</div>
+<div id="columns">
+  <div id="side">
+    <a href="#">Home</a><br>
+    <a href="#">Questions</a><br>
+    <a href="#">News</a><br>
+    <a href="#">Contact</a><br>
+    <%= Time.now %>
+  </div>
+  <div id="main">
+    <% if flash[:notice] %>
+        <div id="notice"><%= flash[:notice] %></div>
+        <% end %>
+    <%= yield %>
+  </div>
+</div>
+</body>
+</html>
